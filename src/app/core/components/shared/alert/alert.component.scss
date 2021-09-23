@@ -1,0 +1,24 @@
+.alert-info {
+  @apply bg-blue-50 text-blue-900
+}
+.alert-success {
+  @apply bg-green-50 text-green-900
+}
+.alert-warning {
+  @apply bg-yellow-50 text-yellow-900
+}
+.alert-danger {
+  @apply bg-red-50 text-red-900
+}
+.text-info {
+  @apply text-blue-500
+}
+.text-success {
+  @apply text-green-500
+}
+.text-warning {
+  @apply text-yellow-500
+}
+.text-danger {
+  @apply text-red-500
+}

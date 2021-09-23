@@ -5,3 +5,7 @@
 .btn {
   @apply py-2 px-4 border shadow-sm text-sm font-medium rounded-md text-white bg-red-400
 }
+
+.form-control {
+  @apply w-full px-3 py-2 text-sm leading-tight text-gray-700 border rounded shadow appearance-none
+}
