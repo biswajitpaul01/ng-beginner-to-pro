@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FaIconLibrary } from '@fortawesome/angular-fontawesome';
+import { faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-header',
@@ -7,7 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  showFormSubmenu = false;
+  faChevronDown = faChevronDown;
+  faChevronUp = faChevronUp;
+
+  constructor(library: FaIconLibrary) {
+    library.addIcons(faChevronDown, faChevronUp);
+  }
 
   ngOnInit(): void {
   }

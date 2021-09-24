@@ -3,6 +3,9 @@ import { CommonModule } from '@angular/common';
 
 import { ReactiveRoutingModule } from './reactive-routing.module';
 import { ReactiveComponent } from './reactive.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { SharedModule } from 'src/app/core/components/shared/shared.module';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 
 @NgModule({
@@ -11,7 +14,10 @@ import { ReactiveComponent } from './reactive.component';
   ],
   imports: [
     CommonModule,
-    ReactiveRoutingModule
+    ReactiveRoutingModule,
+    ReactiveFormsModule,
+    SharedModule,
+    FontAwesomeModule
   ]
 })
 export class ReactiveModule { }
