@@ -4,6 +4,7 @@ import { UsernameValidator } from 'src/app/core/validators/username-validators';
 import { faSpinner } from '@fortawesome/free-solid-svg-icons';
 import {  } from '@fortawesome/free-regular-svg-icons';
 import { PasswordValidators } from 'src/app/core/validators/password-validators';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-reactive',
@@ -16,7 +17,7 @@ export class ReactiveComponent implements OnInit {
   formSubmitted = false;
   faSpinner = faSpinner;
 
-  constructor() {
+  constructor(private toastr: ToastrService) {
     this.form = new FormGroup({
       username: new FormControl('', [Validators.required, Validators.minLength(3), UsernameValidator.cannotContainSpace], [UsernameValidator.checkUniqueUsername]),
       email: new FormControl('', [Validators.required, Validators.email]),
@@ -37,6 +38,9 @@ export class ReactiveComponent implements OnInit {
 
   submit() {
     this.formSubmitted = true;
+    if (this.form.invalid) {
+      this.toastr.error('Please validate the form!')
+    }
     console.log(this.form);
   }
 

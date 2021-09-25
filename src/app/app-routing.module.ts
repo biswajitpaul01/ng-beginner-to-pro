@@ -17,6 +17,10 @@ const routes: Routes = [
   {
     path: 'reactive-form',
     loadChildren: () => import('./examples/forms/reactive/reactive.module').then(m => m.ReactiveModule)
+  },
+  {
+    path: 'posts',
+    loadChildren: () => import('./examples/posts/list/list.module').then(m => m.ListModule)
   }
 ];
 
