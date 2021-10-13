@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FaIconLibrary } from '@fortawesome/angular-fontawesome';
 import { faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-header',
@@ -13,7 +14,10 @@ export class HeaderComponent implements OnInit {
   faChevronDown = faChevronDown;
   faChevronUp = faChevronUp;
 
-  constructor(library: FaIconLibrary) {
+  constructor(
+    library: FaIconLibrary,
+    public auth: AuthService
+  ) {
     library.addIcons(faChevronDown, faChevronUp);
   }
 

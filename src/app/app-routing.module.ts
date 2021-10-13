@@ -21,6 +21,14 @@ const routes: Routes = [
   {
     path: 'posts',
     loadChildren: () => import('./examples/posts/list/list.module').then(m => m.ListModule)
+  },
+  {
+    path: 'login',
+    loadChildren: () => import('./examples/auth/login/login.module').then(m => m.LoginModule)
+  },
+  {
+    path: 'register',
+    loadChildren: () => import('./examples/auth/register/register.module').then(m => m.RegisterModule)
   }
 ];
 

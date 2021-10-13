@@ -40,6 +40,8 @@ export class ReactiveComponent implements OnInit {
     this.formSubmitted = true;
     if (this.form.invalid) {
       this.toastr.error('Please validate the form!')
+    } else {
+      this.form.reset();
     }
     console.log(this.form);
   }
