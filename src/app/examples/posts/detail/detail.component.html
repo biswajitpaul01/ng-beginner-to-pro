@@ -20,7 +20,7 @@
         </div>
         <div class="border-b border-gray-100"></div>
         <div class='text-gray-400 font-medium text-sm mb-7 mt-6 mx-3 px-2'>
-          <img class="rounded w-full h-80" [src]="post.featured_image" loading="lazy">
+          <img class="rounded w-full h-80" [src]="post.featured_image" [alt]="post.post_title" loading="lazy">
         </div>
         <div class='text-gray-600 font-semibold text-lg mb-2 mx-3 px-2'>{{ post.post_title }}</div>
         <div class='text-gray-500 font-thin text-sm mb-6 mx-3 px-2'>{{ post.post_content }}</div>

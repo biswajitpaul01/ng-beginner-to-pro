@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { fade } from 'src/app/core/animations/fade';
+import { Post } from 'src/app/core/models/Post';
 import { PostService } from 'src/app/core/services/post.service';
 
 @Component({
@@ -13,7 +14,7 @@ import { PostService } from 'src/app/core/services/post.service';
 })
 export class DetailComponent implements OnInit {
 
-  post: any;
+  post?: Post;
 
   constructor(
     private postService: PostService,

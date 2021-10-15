@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { fade } from 'src/app/core/animations/fade';
+import { Post } from 'src/app/core/models/Post';
 import { PostService } from 'src/app/core/services/post.service';
 
 @Component({
@@ -12,7 +13,7 @@ import { PostService } from 'src/app/core/services/post.service';
 })
 export class ListComponent implements OnInit {
 
-  posts: any = [];
+  posts: Post[] = [];
 
   currentPage: number;
   totalPosts = 0;
@@ -42,8 +43,8 @@ export class ListComponent implements OnInit {
     })
   }
 
-  identify(index: number, item: any) {
-    return item.id;
+  identify(index: number, item: Post) {
+    return item._id;
   }
 
   pageChanged(page: number) {

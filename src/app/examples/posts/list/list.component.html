@@ -4,7 +4,7 @@
 <div class="w-full grid grid-cols-1 md:grid-cols-4 gap-6">
   <div class="bg-white shadow-md border border-gray-200 rounded-lg max-w-sm mb-5" @fade *ngFor="let post of posts | paginate: { itemsPerPage: postsPerPage, currentPage: currentPage, totalItems: totalPosts }; trackBy: identify">
       <a [routerLink]="['/posts', post.slug]">
-          <img class="rounded-t-lg" [src]="post.featured_image" [alt]="post.title" loading="lazy">
+          <img class="rounded-t-lg" [src]="post.featured_image" [alt]="post.post_title" loading="lazy">
       </a>
       <div class="p-5">
           <a [routerLink]="['/posts', post.slug]">
