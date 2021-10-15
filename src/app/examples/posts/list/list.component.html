@@ -1,3 +1,21 @@
-<p>list works!</p>
+<h1 class="py-3 text-6xl">Posts</h1>
 
-<h3 *ngFor="let post of posts">{{ post.post_title }}</h3>
+
+<div class="w-full grid grid-cols-1 md:grid-cols-4 gap-6">
+  <div class="bg-white shadow-md border border-gray-200 rounded-lg max-w-sm mb-5" @fade *ngFor="let post of posts | paginate: { itemsPerPage: postsPerPage, currentPage: currentPage, totalItems: totalPosts }; trackBy: identify">
+      <a [routerLink]="['/posts', post.slug]">
+          <img class="rounded-t-lg" [src]="post.featured_image" [alt]="post.title" loading="lazy">
+      </a>
+      <div class="p-5">
+          <a [routerLink]="['/posts', post.slug]">
+              <h5 class="text-gray-900 font-bold text-2xl tracking-tight mb-2">{{ post.post_title }}</h5>
+          </a>
+          <p class="font-normal text-gray-700 mb-3">{{ post.post_content }}</p>
+          <a class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2 text-center inline-flex items-center" [routerLink]="['/posts', post.slug]">
+              Read more
+          </a>
+      </div>
+  </div>
+</div>
+
+<pagination-controls (pageChange)="pageChanged($event)"></pagination-controls>

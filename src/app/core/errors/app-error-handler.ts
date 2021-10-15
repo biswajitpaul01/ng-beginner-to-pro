@@ -1,5 +1,4 @@
-import { ErrorHandler, Injectable } from "@angular/core";
-import { ToastrService } from "ngx-toastr";
+import { ErrorHandler } from "@angular/core";
 import { throwError } from "rxjs";
 import { NotFound } from "./not-found";
 
@@ -14,7 +13,7 @@ export class AppErrorHandler implements ErrorHandler {
     if (error.status == 404) {
       throwError(new NotFound)
     } else {
-      let errorMessage =  (error as any).error?.message || '';
+      const errorMessage =  (error as any).error?.message || '';
       alert(errorMessage);
       // throwError(error);
     }

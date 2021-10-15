@@ -19,6 +19,10 @@ const routes: Routes = [
     loadChildren: () => import('./examples/forms/reactive/reactive.module').then(m => m.ReactiveModule)
   },
   {
+    path: 'posts/:slug',
+    loadChildren: () => import('./examples/posts/detail/detail.module').then(m => m.DetailModule)
+  },
+  {
     path: 'posts',
     loadChildren: () => import('./examples/posts/list/list.module').then(m => m.ListModule)
   },

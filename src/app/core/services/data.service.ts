@@ -11,14 +11,26 @@ export class DataService {
 
   constructor(@Inject(String) private url: string, private http: HttpClient) { }
 
-  getAll() {
-    return this.http.get(this.url).pipe(retry(1), catchError(error => {
+  getAll(extraUrl = '', params = {}) {
+    return this.http.get(this.url + '/' + extraUrl, {
+      params: params
+    }).pipe(retry(1), catchError(error => {
       return throwError(error);
     }))
   }
 
-  post() {
+  getOne(extraUrl = '', params = {}) {
+    return this.http.get(this.url + '/' + extraUrl, {
+      params: params
+    }).pipe(retry(1), catchError(error => {
+      return throwError(error);
+    }))
+  }
 
+  post(data: any) {
+    return this.http.post(this.url, data).pipe(retry(1), catchError(error => {
+      return throwError(error);
+    }))
   }
 
 }
