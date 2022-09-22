@@ -9,6 +9,6 @@ import { DataService } from './data.service';
 export class PostService extends DataService {
 
   constructor(http: HttpClient) {
-    super(environment.apiUrl + '/post', http);
+    super(environment.apiUrl + '/posts', http);
   }
 }

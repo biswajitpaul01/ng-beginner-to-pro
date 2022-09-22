@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'http://localhost/dev/laravel/test/api'
+  apiUrl: 'http://localhost/homelab/lv/laravel-cms/api'
 };
 
 /*

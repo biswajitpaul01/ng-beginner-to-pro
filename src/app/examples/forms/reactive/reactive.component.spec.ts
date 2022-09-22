@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ToastrModule } from 'ngx-toastr';
 
 import { ReactiveComponent } from './reactive.component';
 
@@ -8,7 +9,8 @@ describe('ReactiveComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ReactiveComponent ]
+      declarations: [ ReactiveComponent ],
+      imports: [ToastrModule.forRoot()],
     })
     .compileComponents();
   });

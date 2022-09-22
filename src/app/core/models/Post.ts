@@ -1,7 +1,6 @@
 import { User } from "./User";
 
 export interface Post {
-  author: User;
   created_at: string;
   featured_image: string;
   post_content: string;
@@ -10,4 +9,6 @@ export interface Post {
   updated_at: string;
   user_id: string;
   _id: string;
+  user: User;
+  comments: Comment[];
 }

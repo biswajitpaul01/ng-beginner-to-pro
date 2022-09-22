@@ -32,10 +32,10 @@ export class ListComponent implements OnInit {
 
   getPosts(page: number) {
     this.postService.getAll('', {page: page}).subscribe((data: any) => {
-      this.posts = data.result.data;
-      this.currentPage = data.result.current_page;
-      this.totalPosts = data.result.total;
-      this.postsPerPage = data.result.per_page;
+      this.posts = data.posts.data;
+      this.currentPage = data.posts.current_page;
+      this.totalPosts = data.posts.total;
+      this.postsPerPage = data.posts.per_page;
       this.currentPage = page;
       localStorage.setItem('lastPostPage', page.toString());
     }, error => {

@@ -5,7 +5,7 @@ import { Directive, ElementRef, HostListener, Input } from '@angular/core';
 })
 export class ChangeCaseDirective {
 
-  @Input('appChangeCase') case: string = '';
+  @Input('appChangeCase') case = '';
 
   constructor(private el: ElementRef) {  }
 

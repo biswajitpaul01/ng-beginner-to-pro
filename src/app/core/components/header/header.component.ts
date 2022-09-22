@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FaIconLibrary } from '@fortawesome/angular-fontawesome';
 import { faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons';
 import { AuthService } from '../../services/auth.service';
@@ -8,7 +8,7 @@ import { AuthService } from '../../services/auth.service';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent {
 
   showFormSubmenu = false;
   faChevronDown = faChevronDown;
@@ -19,9 +19,6 @@ export class HeaderComponent implements OnInit {
     public auth: AuthService
   ) {
     library.addIcons(faChevronDown, faChevronUp);
-  }
-
-  ngOnInit(): void {
   }
 
 }
