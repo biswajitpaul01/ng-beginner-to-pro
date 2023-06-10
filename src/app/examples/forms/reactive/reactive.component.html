@@ -13,7 +13,7 @@
             <div class="mx-auto max-w-lg ">
               <div class="py-1">
                 <span class="px-1 text-sm text-gray-600">Username</span>
-                <input type="text" class="form-control" formControlName="username">
+                <input type="text" class="form-control" formControlName="username" customAsyncValidator>
                 <p *ngIf="formControls.username.pending"><fa-icon [icon]="faSpinner" [spin]="true"></fa-icon> Checking unique username </p>
                 <app-alert [type]="'danger'" *ngIf="(formControls.username.touched || formSubmitted) && formControls.username.invalid">
                   <ul>
@@ -21,6 +21,7 @@
                     <li *ngIf="formControls.username.hasError('minlength')">Username should contain atleast {{ formControls.username.errors?.minlength.requiredLength }} characters</li>
                     <li *ngIf="formControls.username.hasError('cannotContainSpace')">Username should not have any space</li>
                     <li *ngIf="formControls.username.hasError('checkUniqueUsername')">Username should be unique</li>
+                    <li *ngIf="formControls.username.hasError('custom')">Custom error message from directive</li>
                   </ul>
                 </app-alert>
               </div>

@@ -13,7 +13,7 @@ export class UsernameValidator {
   }
 
   static checkUniqueUsername(control: AbstractControl): Promise<ValidationErrors | null> {
-    return new Promise((resolve, reject) => {
+    return new Promise((resolve) => {
       setTimeout(() => {
         if (control.value == 'john') {
           resolve({

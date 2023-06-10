@@ -1,3 +1,4 @@
+import { SimpleChange } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { InputOutputChildComponent } from './input-output-child.component';
@@ -21,5 +22,12 @@ describe('InputOutputChildComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should update forTest to true', () => {
+    component.ngOnChanges({
+      ratingTotal: new SimpleChange(null, 5, true)
+    });
+    expect(component.forTest).toBeTrue();
   });
 });
