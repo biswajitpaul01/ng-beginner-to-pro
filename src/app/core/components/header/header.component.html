@@ -24,11 +24,19 @@
         <li>
           <a class="block px-4 py-1 md:p-2 lg:px-4" routerLink="/" routerLinkActive="text-purple-600" title="Home" [routerLinkActiveOptions]="{exact: true}">Home</a>
         </li>
-        <li>
-          <a class="block px-4 py-1 md:p-2 lg:px-4" routerLink="/input-output" routerLinkActive="text-purple-600" title="Input Output">Input Output</a>
-        </li>
-        <li>
-          <a class="block px-4 py-1 md:p-2 lg:px-4" routerLink="/custom-directive" routerLinkActive="text-purple-600" title="Custom Directive">Custom Directive</a>
+        <li class="relative">
+          <a class="cursor-pointer" (click)="showBasicSubmenu = !showBasicSubmenu">Basic <fa-icon [icon]="showBasicSubmenu ? faChevronUp : faChevronDown" class="ml-2"></fa-icon></a>
+          <ul class="submenu absolute right-0 w-full mt-2 origin-top-right rounded-md shadow-lg md:w-48 bg-white z-10" *ngIf="showBasicSubmenu">
+            <li>
+              <a class="block px-4 py-1 md:p-2 lg:px-4" routerLink="/input-output" routerLinkActive="text-purple-600" title="Input Output">Input Output</a>
+            </li>
+            <li>
+              <a class="block px-4 py-1 md:p-2 lg:px-4" routerLink="/custom-directive" routerLinkActive="text-purple-600" title="Custom Directive">Custom Directive</a>
+            </li>
+            <li>
+              <a class="block px-4 py-1 md:p-2 lg:px-4" routerLink="/ngcomponent-outlet" routerLinkActive="text-purple-600" title="Ngcomponent Outlet">Ngcomponent Outlet</a>
+            </li>
+          </ul>
         </li>
         <li class="relative">
           <a class="cursor-pointer" (click)="showFormSubmenu = !showFormSubmenu">Form <fa-icon [icon]="showFormSubmenu ? faChevronUp : faChevronDown" class="ml-2"></fa-icon></a>

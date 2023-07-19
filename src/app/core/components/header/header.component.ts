@@ -10,6 +10,7 @@ import { AuthService } from '../../services/auth.service';
 })
 export class HeaderComponent {
 
+  showBasicSubmenu = false;
   showFormSubmenu = false;
   faChevronDown = faChevronDown;
   faChevronUp = faChevronUp;

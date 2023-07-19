@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { map } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
-import { map } from 'rxjs/internal/operators/map';
 
 @Injectable({
   providedIn: 'root'
@@ -14,12 +14,12 @@ export class AuthService {
 
   login(data: any) {
     return this.http.post(environment.apiUrl + '/login', data)
-    .pipe(map(data => this.setUser(data)));
+      .pipe(map(data => this.setUser(data)));
   }
 
   register(data: any) {
     return this.http.post(environment.apiUrl + '/register', data)
-    .pipe(map(data => this.setUser(data)));
+      .pipe(map(data => this.setUser(data)));
   }
 
   setUser(data: any) {
@@ -33,7 +33,7 @@ export class AuthService {
   }
 
   get isLoggedIn() {
-    return !! localStorage.getItem('token');
+    return !!localStorage.getItem('token');
   }
 
   logout() {
